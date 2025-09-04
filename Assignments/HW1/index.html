@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW1-PrajwalDambalkar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Create your blog post!</h1>
+    <form id="Data236_HW1">
+        <label>
+            Blog Title:
+            <input type="text" name="title" placeholder="Enter the title of your blog" required autofocus>
+        </label>
+        <br>
+
+        <label>
+            Author Name:
+            <input type="text" name="name" placeholder="Enter your name" required>
+        </label>
+        <br>
+
+        <label>
+            Email:
+            <input type="email" name="email" placeholder="Enter your email" required>
+        </label>
+        <br>
+
+        <label>
+            Blog Content:
+            <textarea name="content" placeholder="Write your blog content here..." required></textarea>
+        </label>
+        <br>
+        <label>
+            Category:
+        
+            <select name="category" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="technology">Technology</option>
+                <option value="lifestyle">Lifestyle</option>
+                <option value="travel">Travel</option>
+                <option value="education">Education</option>
+            </select>
+        </label>
+        <br>
+
+        <label>
+            <input type="checkbox" name="terms" required>
+            I agree to the terms and conditions
+        </label>
+        <br>
+
+        <button type="submit">Publish Blog</button>
+    </form>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
