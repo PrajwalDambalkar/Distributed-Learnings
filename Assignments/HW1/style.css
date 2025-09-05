@@ -83,7 +83,8 @@ input[type="checkbox"] {
     height: 20px;
 }
 
-button[type="submit"] {
+button[type="submit"],
+button[type="button"] {
     background: #5c9ded;
     color: #fff;
     border: none;
@@ -94,7 +95,8 @@ button[type="submit"] {
     transition: background 0.3s;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover,
+button[type="button"]:hover {
     background: #4178c2;
 }
 
@@ -108,21 +110,32 @@ button[type="submit"]:hover {
     box-shadow: 0 4px 24px rgba(44, 62, 80, 0.3);
 }
 
+/* Blog List Section */
 #blogListSection {
-    max-width: 600px;
-    margin: 40px auto;
+    max-width: 900px;
+    margin: 32px auto;
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+    border-radius: 12px;
+    box-shadow: 0 10px 26px rgba(44, 62, 80, .10);
     padding: 24px 28px;
 }
 
-#blogList .blog-card {
-    border-bottom: 1px solid #e0e4ea;
-    padding: 16px 0;
+
+#blogList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
 }
 
-#blogList .blog-card:last-child {
+#blogList .blog-card {
+    background: #fff;
+    border: 1px solid #e7ecf2;
+    border-radius: 10px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 10px rgba(44, 62, 80, .06);
+}
+
+/* #blogList .blog-card:last-child {
     border-bottom: none;
 }
 
@@ -137,4 +150,42 @@ button[type="submit"]:hover {
 
 #blogList small {
     color: #888;
+} */
+
+/* Titles & text rhythm inside cards */
+#blogList .blog-card h3 {
+    margin: 2px 0 6px;
+    color: #273447;
+}
+
+#blogList .blog-card p {
+    margin: 8px 0 10px;
+    line-height: 1.6;
+    color: #3a485a;
+}
+
+#blogList .blog-card small {
+    display: block;
+    /* own line for meta */
+    margin-top: 6px;
+    color: #6b7786;
+    font-style: italic;
+}
+
+/* Button polish + alignment with wider container */
+#clearSubmissions {
+    margin-top: 12px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(59, 157, 237, .20);
+}
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+    #blogListSection {
+        max-width: 95vw;
+        margin: 20px auto;
+        padding: 18px;
+    }
 }
