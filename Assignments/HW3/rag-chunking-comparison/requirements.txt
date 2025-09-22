@@ -1,0 +1,10 @@
+
+# Minimal requirements for LlamaIndex chunking comparison
+llama-index
+llama-index-embeddings-huggingface
+sentence-transformers
+numpy
+pandas
+scikit-learn
+requests
+tabulate

@@ -1,0 +1,42 @@
+# Virtual Environment
+rag-env/
+venv/
+env/
+.venv/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Data and Results (optional - you might want to include some results)
+data/
+results/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# PyTorch/ML model files (if any)
+*.pth
+*.pkl
+*.model
+
+# HuggingFace cache
+.cache/
