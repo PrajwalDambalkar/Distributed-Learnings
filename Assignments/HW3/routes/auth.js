@@ -11,21 +11,21 @@ const users = [
         username: 'admin',
         password: bcrypt.hashSync('password', 8),
         name: 'Administrator',
-        role: 'admin'
+        role: 'Admin'
     },
     {
         id: 2,
         username: 'student',
         password: bcrypt.hashSync('student123', 8),
-        name: 'John Doe',
-        role: 'student'
+        name: 'Prajwal Dambalkar',
+        role: 'Student'
     },
     {
         id: 3,
         username: 'faculty',
         password: bcrypt.hashSync('faculty123', 8),
-        name: 'Dr. Jane Smith',
-        role: 'faculty'
+        name: 'Prof. Shim',
+        role: 'Professor'
     }
 ];
 
