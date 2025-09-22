@@ -21,7 +21,7 @@ A secure authentication system built for the Department of Applied Data Science 
 
 ## Demo Video
 
-https://github.com/user-attachments/assets/screen-recording.mp4
+https://github.com/PrajwalDambalkar/Distributed-Learnings/blob/feature/add-hw3-documentation/media/screen-recording.mp4
 
 _Complete walkthrough of the authentication portal showing login flow, dashboard features, and responsive design._
 
