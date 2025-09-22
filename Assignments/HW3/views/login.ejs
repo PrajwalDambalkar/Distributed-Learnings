@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* SJSU Blue Theme */
+        :root {
+            --sjsu-blue: #1e3a8a;
+            --sjsu-light-blue: #3b82f6;
+            --sjsu-gold: #fbbf24;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* Hero Section with SJSU CIDS Background */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, rgba(59, 130, 246, 0.4) 100%),
+                url('https://www.sjsu.edu/information-data-society/pics/cids-home-hero-092024.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            color: rgb(27, 64, 168);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Add overlay for better text readability */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(59, 130, 246, 0.2) 100%);
+            z-index: 1;
+        }
+
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        .navbar-sjsu {
+            background: rgba(30, 58, 138, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        /* Content Cards */
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Animated elements */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .fade-in-delay-1 {
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .fade-in-delay-2 {
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-sjsu fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-mortarboard-fill me-2"></i>
+                <strong>ADS-SJSU</strong> Authentication System
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/">
+                    <i class="bi bi-house-fill me-1"></i>Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 mx-auto text-center">
+                    <!-- Login Card -->
+                    <div class="content-card p-5 fade-in-up">
+                        <div class="text-center mb-4">
+                            <h2 class="text-primary fw-bold mb-3">Login</h2>
+                            <p class="text-muted">Enter your credentials to access the system</p>
+                        </div>
+
+                        <!-- Error Alert (shown if login fails) -->
+                        <% if (typeof error !=='undefined' && error) { %>
+                            <div class="alert alert-danger fade-in-delay-1 fade-in-up" role="alert">
+                                <i class="bi bi-exclamation-triangle me-2"></i>
+                                <%= error %>
+                            </div>
+                            <% } %>
+
+                                <!-- Login Form -->
+                                <form action="/auth/login" method="POST">
+                                    <!-- Username Field -->
+                                    <div class="mb-3 text-start">
+                                        <label for="username" class="form-label fw-semibold">Username</label>
+                                        <input type="text" class="form-control form-control-lg" id="username"
+                                            name="username" placeholder="Enter your username" required>
+                                    </div>
+
+                                    <!-- Password Field -->
+                                    <div class="mb-4 text-start">
+                                        <label for="password" class="form-label fw-semibold">Password</label>
+                                        <input type="password" class="form-control form-control-lg" id="password"
+                                            name="password" placeholder="Enter your password" required>
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <div class="d-grid mb-3">
+                                        <button type="submit" class="btn btn-primary btn-lg py-3 fw-semibold"
+                                            style="background: var(--sjsu-blue); border-color: var(--sjsu-blue); border-radius: 50px;">
+                                            <i class="bi bi-box-arrow-in-right me-2"></i>
+                                            Login
+                                        </button>
+                                    </div>
+                                </form>
+
+                                <!-- Back to Home Link -->
+                                <div class="text-center">
+                                    <a href="/" class="text-decoration-none">
+                                        <i class="bi bi-arrow-left me-1"></i>
+                                        Back to Home
+                                    </a>
+                                </div>
+                    </div>
+
+                    <!-- Demo Credentials Card -->
+                    <div class="content-card mt-4 p-4 fade-in-delay-2 fade-in-up">
+                        <div class="text-center">
+                            <h6 class="text-primary mb-3">
+                                <i class="bi bi-key me-2"></i>
+                                Demo Credentials
+                            </h6>
+                            <div class="row text-muted small">
+                                <div class="col-md-4 mb-2">
+                                    <strong class="text-danger">Admin:</strong><br>
+                                    admin / password
+                                </div>
+                                <div class="col-md-4 mb-2">
+                                    <strong class="text-primary">Student:</strong><br>
+                                    student / student123
+                                </div>
+                                <div class="col-md-4 mb-2">
+                                    <strong class="text-warning">Faculty:</strong><br>
+                                    faculty / faculty123
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS (optional) -->
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
