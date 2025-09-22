@@ -22,7 +22,7 @@ A secure authentication system built for the Department of Applied Data Science 
 ## Demo Video
 
 <video width="100%" controls>
-  <source src="[Video](https://github.com/PrajwalDambalkar/Distributed-Learnings/blob/feature/add-hw3-documentation/media/screen-recording.mp4)" type="video/mp4">
+  <source src="[Video](media/screen-recording.mp4)" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -34,15 +34,15 @@ _Complete walkthrough of the authentication portal showing login flow, dashboard
 
 ### Home Page - Welcome Portal
 
-![Home Page](screenshots/home-page.png)
+![Home Page](public/images/home-page.png)
 
 ### Secure Login Interface
 
-![Login Page](screenshots/login-page.png)
+![Login Page](public/images/login-page.png)
 
 ### Student Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](public/images/dashboard.png)
 
 ## Installation & Setup
 
