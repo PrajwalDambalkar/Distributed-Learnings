@@ -21,7 +21,7 @@ A secure authentication system built for the Department of Applied Data Science 
 
 ## Demo Video
 
-https://github.com/user-attachments/assets/screen-recording.mp4
+![Video](media/screen-recording.mp4)
 
 _Complete walkthrough of the authentication portal showing login flow, dashboard features, and responsive design._
 
@@ -29,15 +29,15 @@ _Complete walkthrough of the authentication portal showing login flow, dashboard
 
 ### Home Page - Welcome Portal
 
-![Home Page](screenshots/home-page.png)
+![Home Page](public/images/home-page.png)
 
 ### Secure Login Interface
 
-![Login Page](screenshots/login-page.png)
+![Login Page](public/images/login-page.png)
 
 ### Student Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](public/images/dashboard.png)
 
 ## Installation & Setup
 
