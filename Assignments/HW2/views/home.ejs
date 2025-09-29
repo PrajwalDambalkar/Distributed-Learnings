@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Book Store</title>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-inner">
+            <h1 class="heading">Book Store</h1>
+            <p class="subheading">Add, update, and manage your library!</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="card table-wrap">
+            <h2 class="section-title">List of All Books</h2>
+
+            <div class="table-container">
+                <table class="books-table">
+                    <thead>
+                        <tr>
+                            <th>Book ID</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (books && books.length> 0) { %>
+                            <% books.forEach(function(book){ %>
+                                <tr>
+                                    <td>
+                                        <%= book.BookID %>
+                                    </td>
+                                    <td>
+                                        <%= book.Title %>
+                                    </td>
+                                    <td>
+                                        <%= book.Author %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                                    <% } else { %>
+                                        <tr>
+                                            <td colspan="3" class="empty-state">No books in your library yet</td>
+                                        </tr>
+                                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="actions-container">
+                <a href="/add-book" class="btn btn-primary">Add Book</a>
+                <a href="/update-book" class="btn btn-secondary">Update Book</a>
+                <a href="/delete-book" class="btn btn-danger">Delete Book</a>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

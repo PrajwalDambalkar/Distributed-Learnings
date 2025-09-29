@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Update Book</title>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-inner">
+            <h1 class="heading">Update a Book</h1>
+            <p class="subheading">Enter the Book ID and the new title/author, then save.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="form-container">
+            <form action="/update-book" method="POST" class="book-form">
+                <div class="form-group">
+                    <label for="bookId">Book ID</label>
+                    <input type="number" id="bookId" name="id" placeholder="Enter Book ID" required autocomplete="off">
+                    <small>Enter the ID of the book you want to update</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="title">New Title</label>
+                    <input type="text" id="title" name="title" placeholder="Enter new title" required
+                        autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="author">New Author</label>
+                    <input type="text" id="author" name="author" placeholder="Enter new author" required
+                        autocomplete="off">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Update Book</button>
+                    <a href="/" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
