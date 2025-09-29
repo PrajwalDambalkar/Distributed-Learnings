@@ -106,7 +106,7 @@ function CreateBook({ addBook }) {
 
             <div className="form-actions">
               <button type="submit" className="btn btn-primary">
-                Save Book
+                Add Book
               </button>
               <button 
                 type="button" 
