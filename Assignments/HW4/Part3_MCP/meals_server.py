@@ -188,7 +188,7 @@ def _extract_ingredients(meal: Dict[str, Any]) -> List[Dict[str, str]]:
 
 
 @mcp.tool()
-async def meal_details(id: str):
+async def meal_details(id: str) -> Dict[str, Any] | None:
     """
     Lookup complete details for a specific meal by ID.
     
