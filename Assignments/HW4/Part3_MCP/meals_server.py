@@ -248,7 +248,7 @@ async def meal_details(id: str):
 
 
 @mcp.tool()
-async def random_meal():
+async def random_meal() -> Dict[str, Any] | None:
     """
     Get a random meal from TheMealDB.
     Great for meal inspiration or discovering new recipes.
