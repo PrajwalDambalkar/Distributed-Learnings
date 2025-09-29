@@ -111,7 +111,7 @@ async def search_meals_by_name(query: str, limit: int = 5) -> List[Dict[str, Any
 
 
 @mcp.tool()
-async def meals_by_ingredient(ingredient: str, limit: int = 12):
+async def meals_by_ingredient(ingredient: str, limit: int = 12) -> List[Dict[str, Any]]:
     """
     Filter meals by their main ingredient.
     
