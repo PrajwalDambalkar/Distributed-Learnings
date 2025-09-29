@@ -120,11 +120,3 @@ const PORT = process.env.PORT || 5001;
 app.listen(PORT, function () {
     console.log(`Server listening on port ${PORT}`);
 });
-
-// var books = [
-//     { "BookID": "1", "Title": "The Brothers Karamazov", "Author": "Fyodor Dostoevsky" },
-//     { "BookID": "2", "Title": "Invisible Man", "Author": "Ralph Ellison" },
-//     { "BookID": "3", "Title": "Middlemarch", "Author": "George Eliot" },
-//     { "BookID": "4", "Title": "Slaughterhouse-Five", "Author": "Kurt Vonnegut" },
-//     { "BookID": "5", "Title": "Things Fall Apart", "Author": "Chinua Achebe" }
-// ]
