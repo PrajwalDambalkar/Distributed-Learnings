@@ -4,7 +4,7 @@ const { sequelize } = require('./models');
 const bookRoutes = require('./routes/book.routes');
 
 const app = express(); // Initialize Express app
-const PORT = process.env.PORT || 3000; // Default port
+const PORT = process.env.PORT || 3001; // Default port
 
 // Middleware
 app.use(express.json({ space: 2 })); // This adds formatting
