@@ -93,6 +93,50 @@ class BookOut(BookBase):
     class Config:
         from_attributes = True
 
+# Chat application schemas
+from enum import Enum
+class MessageRoleEnum(str, Enum):
+    user = "user"
+    assistant = "assistant"
+    system = "system"
+
+# Chat Input/Output
+class ChatIn(BaseModel):
+    user_id: int = 1
+    message: str
+    conversation_id: Optional[int] = None
+    title: Optional[str] = None
+
+class ChatOut(BaseModel):
+    conversation_id: int
+    reply: str
+
+# Message schemas
+class MessageOut(BaseModel):
+    id: int
+    conversation_id: int
+    role: str
+    content: str
+    created_at: datetime
+    
+    class Config:
+        from_attributes = True
+
+# Conversation schemas
+class ConversationOut(BaseModel):
+    id: int
+    user_id: int
+    title: Optional[str]
+    created_at: datetime
+    updated_at: datetime
+    
+    class Config:
+        from_attributes = True
+
+# The following code was the original code before adding validations. It is kept here for reference.
+# import enum
+# from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Text, Enum
+
 # from pydantic import BaseModel, Field
 # from datetime import datetime
 # from typing import Optional
