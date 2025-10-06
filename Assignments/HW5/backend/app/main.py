@@ -3,6 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from .database import engine, Base
 from .routes import authors, books
 
+from .routes import authors, books, ai  # Add ai
+
+
 # Create tables
 Base.metadata.create_all(bind=engine)
 
@@ -24,3 +27,8 @@ app.include_router(books.router)
 @app.get("/")
 def root():
     return {"message": "Library Management System API"}
+
+# Include routers
+app.include_router(authors.router)
+app.include_router(books.router)
+app.include_router(ai.router)
