@@ -45,6 +45,7 @@ __pycache__/
 *.so
 .Python
 .venv/
+fastapi_env/
 venv/
 env/
 ENV/
