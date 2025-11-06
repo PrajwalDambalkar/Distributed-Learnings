@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+coverage
+.git
+.gitignore
+.env
+.env.local
+.DS_Store
+*.md
+test
+.github
+.eslintrc.json
+docker-compose.yml
+Dockerfile
