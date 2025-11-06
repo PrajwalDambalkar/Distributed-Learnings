@@ -64,16 +64,19 @@ HW8/
 ### Local Development
 
 1. Clone the repository:
+
 ```bash
 cd Assignments/HW8
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Create environment file:
+
 ```bash
 cp .env.example .env
 ```
@@ -97,17 +100,20 @@ The API will be available at `http://localhost:3000`
 ### Using Docker
 
 #### Build and run with Docker:
+
 ```bash
 docker build -t hw8-api .
 docker run -p 3000:3000 hw8-api
 ```
 
 #### Using Docker Compose:
+
 ```bash
 docker-compose up --build
 ```
 
 To stop:
+
 ```bash
 docker-compose down
 ```
@@ -115,34 +121,38 @@ docker-compose down
 ## 📚 API Endpoints
 
 ### Base URL
+
 ```
 http://localhost:3000
 ```
 
 ### Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/` | Welcome message and API info |
-| GET | `/api/items` | Get all items |
-| GET | `/api/items/:id` | Get item by ID |
-| POST | `/api/items` | Create new item |
-| PUT | `/api/items/:id` | Update item by ID |
-| DELETE | `/api/items/:id` | Delete item by ID |
+| Method | Endpoint         | Description                  |
+| ------ | ---------------- | ---------------------------- |
+| GET    | `/`              | Welcome message and API info |
+| GET    | `/api/items`     | Get all items                |
+| GET    | `/api/items/:id` | Get item by ID               |
+| POST   | `/api/items`     | Create new item              |
+| PUT    | `/api/items/:id` | Update item by ID            |
+| DELETE | `/api/items/:id` | Delete item by ID            |
 
 ### Example Requests
 
 #### Get all items
+
 ```bash
 curl http://localhost:3000/api/items
 ```
 
 #### Get single item
+
 ```bash
 curl http://localhost:3000/api/items/1
 ```
 
 #### Create new item
+
 ```bash
 curl -X POST http://localhost:3000/api/items \
   -H "Content-Type: application/json" \
@@ -150,6 +160,7 @@ curl -X POST http://localhost:3000/api/items \
 ```
 
 #### Update item
+
 ```bash
 curl -X PUT http://localhost:3000/api/items/1 \
   -H "Content-Type: application/json" \
@@ -157,6 +168,7 @@ curl -X PUT http://localhost:3000/api/items/1 \
 ```
 
 #### Delete item
+
 ```bash
 curl -X DELETE http://localhost:3000/api/items/1
 ```
@@ -164,6 +176,7 @@ curl -X DELETE http://localhost:3000/api/items/1
 ### Response Format
 
 #### Success Response
+
 ```json
 {
   "success": true,
@@ -177,6 +190,7 @@ curl -X DELETE http://localhost:3000/api/items/1
 ```
 
 #### Error Response
+
 ```json
 {
   "success": false,
@@ -187,21 +201,25 @@ curl -X DELETE http://localhost:3000/api/items/1
 ## 🧪 Testing
 
 ### Run all tests
+
 ```bash
 npm test
 ```
 
 ### Run tests in watch mode
+
 ```bash
 npm run test:watch
 ```
 
 ### Run linter
+
 ```bash
 npm run lint
 ```
 
 ### Fix linting issues
+
 ```bash
 npm run lint:fix
 ```
@@ -261,6 +279,7 @@ The project uses GitHub Actions for automated CI/CD.
 ### Pipeline Stages
 
 1. **Test Stage**
+
    - Checkout code
    - Setup Node.js
    - Install dependencies
@@ -269,6 +288,7 @@ The project uses GitHub Actions for automated CI/CD.
    - Upload coverage reports
 
 2. **Build Stage**
+
    - Build Docker image
    - Test Docker container
 
@@ -283,8 +303,9 @@ The project uses GitHub Actions for automated CI/CD.
 
 2. **Add GitHub Secrets**:
    Go to your repository → Settings → Secrets and variables → Actions
-   
+
    Add these secrets:
+
    - `DOCKER_USERNAME`: Your Docker Hub username
    - `DOCKER_PASSWORD`: Your Docker Hub password or access token
 
@@ -300,6 +321,7 @@ The project uses GitHub Actions for automated CI/CD.
 ### Docker Hub Tags
 
 The pipeline creates multiple tags:
+
 - `latest`: Latest version from main branch
 - `main-<commit-sha>`: Specific commit from main
 - Branch-specific tags for other branches
@@ -320,6 +342,7 @@ NODE_ENV=development
 The project uses ESLint for code quality. Configuration is in `.eslintrc.json`.
 
 To customize rules, edit the file and run:
+
 ```bash
 npm run lint:fix
 ```
